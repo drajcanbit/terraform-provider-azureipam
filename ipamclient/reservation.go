@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"net/http"
 	"strings"
+	"time"
 )
 
 // internal Models
@@ -172,6 +173,8 @@ func (c *Client) CreateReservation(space string, blocks []string, description *s
 	if err != nil {
 		return nil, err
 	}
+
+	time.Sleep(5 * time.Second)
 
 	return &reservation, nil
 }
